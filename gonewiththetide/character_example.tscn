@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://byhb3ow0i0ti0"]
+
+[ext_resource type="PackedScene" uid="uid://c123py7ieywhd" path="res://code/superclasses/playable_character.tscn" id="1_3rsyb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60akv"]
+size = Vector2(33, 29)
+
+[node name="characterExample" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(15.5, -15.5)
+shape = SubResource("RectangleShape2D_60akv")
+
+[node name="PlayableCharacter" parent="." instance=ExtResource("1_3rsyb")]

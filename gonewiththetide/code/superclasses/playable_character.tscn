@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://c123py7ieywhd"]
+
+[ext_resource type="Texture2D" uid="uid://1y7w0x6ti0fc" path="res://graphics/placeholders/PlaceHolder_32x32.png" id="1_p03to"]
+[ext_resource type="Script" path="res://code/superclasses/playable_character.gd" id="2_jxwy7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytapw"]
+atlas = ExtResource("1_p03to")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stw65"]
+atlas = ExtResource("1_p03to")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tp5wi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytapw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stw65")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="PlayableCharacter" type="AnimatedSprite2D"]
+position = Vector2(1, -33)
+sprite_frames = SubResource("SpriteFrames_tp5wi")
+animation = &"idle"
+centered = false
+script = ExtResource("2_jxwy7")
